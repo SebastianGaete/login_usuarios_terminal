@@ -22,8 +22,7 @@ def inicio():
             esas peticiones las haré en otro fichero utilizando una clase. para despues invocarla por este medio a travez de una instancia de ella.
             """
         case 2:
-            # realiza.ingresar()
-            pass
+            realiza.ingresar()
         case 3:
             print('Gracias por tu preferencia!')
             exit()

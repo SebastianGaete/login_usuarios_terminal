@@ -1,4 +1,5 @@
 import database.conexion as db
+import bcrypt
 
 DB = db.DataBase()
 DDBB = DB.conexion()
@@ -14,7 +15,7 @@ class Consultas():
         self.password = password
 
     def crear_usuario(self):
-
+        
         sql = ("INSERT INTO usuarios (nombre, apellido, email, password) VALUES (%s,%s,%s,%s)")
         datos = (self.nombre, self.apellido, self.email, self.password)
 
@@ -22,6 +23,18 @@ class Consultas():
         conexion.commit()
 
         resultado = cursor.rowcount
-
         return resultado, self
+    
 
+
+    def logear_usuario(self):
+
+        sql = ("SELECT * FROM usuarios WHERE email = %s AND password = %s")
+        datos= (self.email, self.password)
+
+        cursor.execute(sql, datos)
+        usuario = cursor.fetchone()
+
+        resultado = cursor.rowcount
+        return resultado, self, usuario
+        
