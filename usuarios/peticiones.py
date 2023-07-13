@@ -1,5 +1,6 @@
 from .consultasqls import Consultas
 
+
 class Usuario():
     
     def registrarse(self):
@@ -18,6 +19,8 @@ class Usuario():
 
 
     def ingresar(self):
+        
+    
         email = input('Ingrese su email >> ')
         password = input('Ingrese su contraseña >> ')
 
@@ -29,6 +32,9 @@ class Usuario():
         else:
             print('No hay ningún usuario registrado con estas credenciales!')
 
+
+    def postear(self):
+        pass
 
 
     
